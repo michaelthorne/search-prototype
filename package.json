@@ -1,0 +1,11 @@
+{
+    "name": "search-prototype",
+    "version": "0.0.0",
+    "description": "Search prototype",
+    "author": "Michael Thorne",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/michaelthorne/search-prototype.git"
+    }
+}
