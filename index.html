@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Search prototype</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font: 100%/1 sans-serif;
+        }
+
+        .header {
+            background-color: #222;
+            padding: 2em;
+        }
+
+        .header .hN {
+            color: #fff;
+            font-size: 1.25em;
+            margin-bottom: 0;
+        }
+
+        .main {
+            background-color: #f7f7f7;
+            padding: 1em;
+        }
+
+        .wrapper {
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 45em; /* 720 / 16 */
+        }
+
+        .btn {
+            background-color: #ccc;
+            border: 0;
+            color: #222;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1em;
+            height: auto;
+            line-height: 1;
+            padding: 1.5em 2em;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.25s, color 0.25s;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .btn:focus,
+        .btn:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        input[type="text"]{
+            -webkit-appearance: none;
+        }
+
+        .tabs {
+            list-style: none;
+            margin: 0 0 2em 0;
+            padding: 0;
+        }
+
+        .tabs li {
+            display: block;
+        }
+
+        .tabs li a {
+            color: #999;
+            display: inline-block;
+            padding: 0.75em;
+            text-decoration: none;
+            transition: background-color 0.25s, color 0.25s;
+        }
+
+        .tabs li a:focus,
+        .tabs li a:hover {
+            background-color: #ddd;
+            color: #666;
+        }
+
+        .tabs li.is-current a {
+            background-color: #ccc;
+            color: #222;
+            position: relative;
+        }
+
+        .tabs li.is-current a:after {
+            border-left: 1em solid transparent;
+            border-right: 1em solid transparent;
+            border-top: 1em solid #ccc;
+            bottom: -1em;
+            content: "";
+            height: 0;
+            left: 0;
+            margin-right: auto;
+            margin-left: auto;
+            position: absolute;
+            right: 0;
+            width: 0;
+        }
+
+        /* 760 */
+
+        @media all and (min-width: 47.5em) {
+
+            .main {
+                padding: 2em;
+            }
+
+            .tabs li {
+                display: inline-block;
+                margin-left: 0.5em;
+            }
+
+            .tabs li:first-child {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" role="banner">
+        <h1 class="hN">Search prototype</h1>
+    </header>
+
+    <main class="main" role="main">
+        <div class="wrapper">
+            <ul class="tabs">
+                <li class="is-current"><a href="#residential">Residential</a></li>
+                <li><a href="#commercial">Commercial</a></li>
+                <li><a href="#bank-mandated">Bank Mandated</a></li>
+                <li><a href="#auctions">Auctions</a></li>
+                <li><a href="#new-developments">New Developments</a></li>
+            </ul>
+
+            <form class="form" action="index.html" method="post">
+                <label for="status">
+                    <select id="status" name="status">
+                        <option value="1" selected="selected">For Sale</option>
+                        <option value="2">To Rent</option>
+                    </select>
+                </label>
+                <label for="search">
+                    <input class="input" type="text" id="search" name="search" placeholder="Search…" maxlength="20">
+                </label>
+                <button class="btn" type="submit">Search</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
