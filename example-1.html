@@ -105,7 +105,7 @@
 
         .hero .hN {
             color: #001f3f;
-            margin-bottom: 0.75em;
+            margin-bottom: 1em;
         }
 
         /* Wrapper */
@@ -147,34 +147,7 @@
         /* Tabs */
 
         .tabs {
-            list-style: none;
-            margin: 0 0 1em 0;
-            padding: 0;
-        }
-
-        .tabs li {
-            display: block;
-            margin-bottom: 0.5em;
-        }
-
-        .tabs li a {
-            color: #0074d9;
-            display: inline-block;
-            padding: 0.5em;
-            text-decoration: none;
-            transition: background-color 0.25s, color 0.25s;
-        }
-
-        .tabs li a:focus,
-        .tabs li a:hover {
-            background-color: #0074d9;
-            color: #fff;
-        }
-
-        .tabs li.is-current a {
-            background-color: #0074d9;
-            color: #fff;
-            position: relative;
+            display: none;
         }
 
         /* Form */
@@ -289,21 +262,40 @@
             }
 
             .tabs {
-                margin-bottom: 1.75em;
+                display: block;
+                list-style: none;
+                margin: 0 0 1.75em 0;
+                padding: 0;
             }
 
             .tabs li {
                 display: inline-block;
-                margin-bottom: 0;
-                margin-left: 1em;
-            }
-
-            .tabs li:first-child {
-                margin-left: 0;
             }
 
             .tabs li a {
+                color: #0074d9;
+                display: inline-block;
+                margin-bottom: 0;
+                margin-left: 1em;
                 padding: 1em;
+                text-decoration: none;
+                transition: background-color 0.25s, color 0.25s;
+            }
+
+            .tabs li:first-child a {
+                margin-left: 0;
+            }
+
+            .tabs li a:focus,
+            .tabs li a:hover {
+                background-color: #0074d9;
+                color: #fff;
+            }
+
+            .tabs li.is-current a {
+                background-color: #0074d9;
+                color: #fff;
+                position: relative;
             }
 
             .tabs li.is-current a:after {
