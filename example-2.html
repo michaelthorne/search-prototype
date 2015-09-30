@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Search prototype</title>
+    <title>Example 2 | Search prototype</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -63,15 +63,13 @@
             display: block;
         }
 
-        /* List */
+        /* Nav */
 
-        .list {
+        .nav .list {
             list-style: none;
             margin: 0;
             padding: 0;
         }
-
-        /* Nav */
 
         .nav .list li {
             margin-bottom: 1em;
@@ -116,28 +114,6 @@
             margin-right: auto;
             margin-left: auto;
             max-width: 45em; /* 720 / 16 */
-        }
-
-        /* List */
-
-        .list--links {
-            text-align: center;
-        }
-
-        .list--links li {
-            margin-bottom: 1em;
-        }
-
-        .list--links a {
-            color: #0074d9;
-            font-size: 1.25em; /* 20 / 16 */
-            text-decoration: none;
-            transition: color 0.25s;
-        }
-
-        .list--links a:focus,
-        .list--links a:hover {
-            color: #001f3f;
         }
 
         /* Button */
@@ -393,7 +369,7 @@
         }
 
         /* 1200 and 600 */
-
+        
         @media all and (min-width: 75em) and (min-height: 37.5em) {
 
             .main {
@@ -425,10 +401,80 @@
             <div class="wrapper">
                 <h1 class="hN">Search prototype</h1>
 
-                <ol class="list list--links">
-                    <li><a href="example-1.html">Example 1</a></li>
-                    <li><a href="example-2.html">Example 2</a></li>
-                </ol>
+                <ul class="tabs">
+                    <li class="is-current"><a href="#residential">Residential</a></li>
+                    <li><a href="#commercial">Commercial</a></li>
+                    <li><a href="#bank-mandated">Bank Mandated</a></li>
+                    <li><a href="#auctions">Auctions</a></li>
+                    <li><a href="#developments">Developments</a></li>
+                </ul>
+
+                <form class="form form--search " action="index.html" method="post">
+                    <label class="label label--status" for="status">
+                        <select class="input input--select" id="status" name="status">
+                            <option value="1" selected="selected">For Sale</option>
+                            <option value="2">To Rent</option>
+                        </select>
+                    </label>
+
+                    <label class="label label--search" for="search">
+                        <input class="input" type="text" id="search" name="search" placeholder="Enter a location or reference no." maxlength="20">
+                    </label>
+
+                    <fieldset class="fieldset">
+                        <label class="label" for="min">
+                            <select class="input input--select input--alt" id="min" name="min">
+                                <option value="">Min Price</option>
+                                <option value="500000">R 500,000</option>
+                                <option value="1000000">R 1,000,000</option>
+                                <option value="1500000">R 1,500,000</option>
+                                <option value="2000000">R 2,000,000</option>
+                            </select>
+                        </label>
+
+                        <label class="label" for="max">
+                            <select class="input input--select input--alt" id="max" name="max">
+                                <option value="">Max Price</option>
+                                <option value="500000">R 500,000</option>
+                                <option value="1000000">R 1,000,000</option>
+                                <option value="1500000">R 1,500,000</option>
+                                <option value="2000000">R 2,000,000</option>
+                            </select>
+                        </label>
+
+                        <label class="label" for="beds">
+                            <select class="input input--select input--alt" id="beds" name="beds">
+                                <option value="">Beds</option>
+                                <option value="1">1+</option>
+                                <option value="2">2+</option>
+                                <option value="3">3+</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </label>
+
+                        <label class="label" for="baths">
+                            <select class="input input--select input--alt" id="baths" name="baths">
+                                <option value="">Baths</option>
+                                <option value="1">1+</option>
+                                <option value="2">2+</option>
+                                <option value="3">3+</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </label>
+
+                        <label class="label" for="type">
+                            <select class="input input--select input--alt" id="type" name="type">
+                                <option value="">Type</option>
+                                <option value="1">Apartment/Flat</option>
+                                <option value="2">House</option>
+                                <option value="3">Townhouse</option>
+                                <option value="4">Vacant Land</option>
+                            </select>
+                        </label>
+                    </fieldset>
+
+                    <button class="btn" type="submit">Search</button>
+                </form>
             </div>
         </div>
     </main>
