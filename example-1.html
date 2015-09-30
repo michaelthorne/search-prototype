@@ -180,11 +180,7 @@
         /* Form */
 
         .form--search .fieldset {
-            background-color: #ddd;
-            border: 0;
-            clear: both;
-            margin: 0;
-            padding: 0.75em;
+            display: none;
         }
 
         .form--search .fieldset .label {
@@ -327,6 +323,15 @@
 
             .form--search {
                 position: relative;
+            }
+
+            .form--search .fieldset {
+                background-color: #ddd;
+                border: 0;
+                clear: both;
+                display: block;
+                margin: 0;
+                padding: 0.75em;
             }
 
             .form--search .fieldset .label {
