@@ -63,12 +63,12 @@
 
         .main {
             background-color: #f7f7f7;
-            padding: 1em;
+            padding: 2em 1em;
         }
 
         .hero .hN {
+            color: #001f3f;
             margin-bottom: 0.75em;
-            text-align: center;
         }
 
         .wrapper {
@@ -78,9 +78,9 @@
         }
 
         .btn {
-            background-color: #ccc;
+            background-color: #0074d9;
             border: 0;
-            color: #222;
+            color: #fff;
             cursor: pointer;
             display: inline-block;
             font-size: 1em;
@@ -96,8 +96,7 @@
 
         .btn:focus,
         .btn:hover {
-            background-color: #000;
-            color: #fff;
+            background-color: #001f3f;
         }
 
         input[type="text"]{
@@ -115,7 +114,7 @@
         }
 
         .tabs li a {
-            color: #999;
+            color: #0074d9;
             display: inline-block;
             padding: 0.75em;
             text-decoration: none;
@@ -124,13 +123,13 @@
 
         .tabs li a:focus,
         .tabs li a:hover {
-            background-color: #ddd;
-            color: #666;
+            background-color: #0074d9;
+            color: #fff;
         }
 
         .tabs li.is-current a {
-            background-color: #ccc;
-            color: #222;
+            background-color: #0074d9;
+            color: #fff;
             position: relative;
         }
 
@@ -163,7 +162,7 @@
         @media all and (min-width: 47.5em) {
 
             .main {
-                padding: 4em;
+                padding: 4em 2em;
             }
 
             .nav {
@@ -182,6 +181,7 @@
             .hero .hN {
                 font-size: 3em;
                 margin-bottom: 1.5em;
+                text-align: center;
             }
 
             .tabs li {
@@ -194,10 +194,10 @@
             }
 
             .tabs li.is-current a:after {
-                border-left: 1em solid transparent;
-                border-right: 1em solid transparent;
-                border-top: 1em solid #ccc;
-                bottom: -1em;
+                border-left: 0.5em solid transparent;
+                border-right: 0.5em solid transparent;
+                border-top: 0.5em solid #0074d9;
+                bottom: -0.5em;
                 content: "";
                 height: 0;
                 left: 0;
@@ -206,6 +206,15 @@
                 position: absolute;
                 right: 0;
                 width: 0;
+            }
+        }
+
+        /* 1200 and 600 */
+        
+        @media all and (min-width: 75em) and (min-height: 37.5em) {
+
+            .main {
+                padding: 8em;
             }
         }
     </style>
