@@ -8,15 +8,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
+        /* Reset */
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        main,
+        menu,
+        nav,
+        section,
+        summary {
+            display: block;
+        }
+
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+
+        input[type="text"]{
+            -webkit-appearance: none;
+        }
+
+        /* HTML */
+
         html {
             font: 100%/1 sans-serif;
         }
+
+        /* Header */
 
         .header {
             background-color: #0074d9;
@@ -31,6 +62,8 @@
         .header .logo img {
             display: block;
         }
+
+        /* Nav */
 
         .nav .list {
             list-style: none;
@@ -61,15 +94,21 @@
             color: #fff;
         }
 
+        /* Main */
+
         .main {
             background-color: #f7f7f7;
             padding: 2em 1em;
         }
 
+        /* Hero */
+
         .hero .hN {
             color: #001f3f;
             margin-bottom: 0.75em;
         }
+
+        /* Wrapper */
 
         .wrapper {
             margin-right: auto;
@@ -77,11 +116,7 @@
             max-width: 45em; /* 720 / 16 */
         }
 
-        button::-moz-focus-inner,
-        input::-moz-focus-inner {
-            border: 0;
-            padding: 0;
-        }
+        /* Button */
 
         .btn {
             background-color: #0074d9;
@@ -107,9 +142,7 @@
             outline: 0;
         }
 
-        input[type="text"]{
-            -webkit-appearance: none;
-        }
+        /* Tabs */
 
         .tabs {
             list-style: none;
@@ -140,6 +173,8 @@
             color: #fff;
             position: relative;
         }
+
+        /* Form */
 
         .form--search .label {
             display: block;
