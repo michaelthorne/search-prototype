@@ -228,6 +228,11 @@
             padding: 0.25em;
         }
 
+        .form--search .label .input--radio {
+            height: auto;
+            width: auto;
+        }
+
         .form--search .input--alt:focus,
         .form--search .input--alt:hover {
             background-color: #0074d9;
@@ -343,17 +348,13 @@
             }
 
             .form--search .label--status {
-                margin-bottom: 0.75em;
-                width: 25%;
+                margin-top: 1.5em;
+                width: 14%;
             }
 
             .form--search .label--search {
                 margin-bottom: 0.75em;
-                width: 75%;
-            }
-
-            .form--search .label--status {
-                width: 25%;
+                width: 72%;
             }
 
             .form--search .label--search .input {
@@ -410,11 +411,12 @@
                 </ul>
 
                 <form class="form form--search " action="index.html" method="post">
-                    <label class="label label--status" for="status">
-                        <select class="input input--select" id="status" name="status">
-                            <option value="1" selected="selected">For Sale</option>
-                            <option value="2">To Rent</option>
-                        </select>
+                    <label class="label label--status">
+                        <input class="input input--radio" type="radio" id="status-sold" name="status" value="sale" checked="checked"> For Sale
+                    </label>
+
+                    <label class="label label--status">
+                        <input class="input input--radio" type="radio" id="status-rent" name="status" value="rent"> To Rent
                     </label>
 
                     <label class="label label--search" for="search">
