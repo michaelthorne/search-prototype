@@ -92,11 +92,13 @@
             transition: background-color 0.25s, color 0.25s;
             vertical-align: middle;
             white-space: nowrap;
+            width: 100%;
         }
 
         .btn:focus,
         .btn:hover {
             background-color: #001f3f;
+            outline: 0;
         }
 
         input[type="text"]{
@@ -105,7 +107,7 @@
 
         .tabs {
             list-style: none;
-            margin: 0 0 2em 0;
+            margin: 0 0 1em 0;
             padding: 0;
         }
 
@@ -131,6 +133,36 @@
             background-color: #0074d9;
             color: #fff;
             position: relative;
+        }
+
+        .form--search .label {
+            display: block;
+        }
+
+        .form--search .label .input {
+            width: 100%;
+        }
+
+        .form--search .input {
+            background-color: #fff;
+            border: 2px solid transparent;
+            color: #111;
+            font-size: 1em;
+            height: 4em; /* 64 / 16 */
+            line-height: normal;
+            padding: 1.3125em;
+            transition: border-color 0.25s;
+        }
+
+        .form--search .input:focus,
+        .form--search .input:hover {
+            border-color: #0074d9;
+            outline: none;
+        }
+
+        .form--search .input--select {
+            padding-top: 0;
+            padding-bottom: 0;
         }
 
         /* 640 */
@@ -184,6 +216,10 @@
                 text-align: center;
             }
 
+            .tabs {
+                margin-bottom: 2em;
+            }
+
             .tabs li {
                 display: inline-block;
                 margin-left: 0.5em;
@@ -206,6 +242,18 @@
                 position: absolute;
                 right: 0;
                 width: 0;
+            }
+
+            .form--search .label {
+                float: left;
+            }
+
+            .form--search .label--search .input {
+                min-width: 28.0625em; /* 449 / 16 */
+            }
+
+            .form--search .btn {
+                width: auto;
             }
         }
 
@@ -247,19 +295,19 @@
                     <li><a href="#commercial">Commercial</a></li>
                     <li><a href="#bank-mandated">Bank Mandated</a></li>
                     <li><a href="#auctions">Auctions</a></li>
-                    <li><a href="#new-developments">New Developments</a></li>
+                    <li><a href="#developments">Developments</a></li>
                 </ul>
 
-                <form class="form" action="index.html" method="post">
-                    <label for="status">
-                        <select id="status" name="status">
+                <form class="form form--search " action="index.html" method="post">
+                    <label class="label" for="status">
+                        <select class="input input--select" id="status" name="status">
                             <option value="1" selected="selected">For Sale</option>
                             <option value="2">To Rent</option>
                         </select>
                     </label>
 
-                    <label for="search">
-                        <input class="input" type="text" id="search" name="search" placeholder="Search…" maxlength="20">
+                    <label class="label label--search" for="search">
+                        <input class="input" type="text" id="search" name="search" placeholder="Enter a location…" maxlength="20">
                     </label>
 
                     <button class="btn" type="submit">Search</button>
