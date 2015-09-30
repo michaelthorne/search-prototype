@@ -207,10 +207,8 @@
             padding: 0.25em;
         }
 
-        .form--search .label .input--radio {
-            height: auto;
+        .form--search .label--status input {
             margin-right: 0.25em;
-            width: auto;
         }
 
         .form--search .input--alt:focus,
@@ -379,7 +377,7 @@
         }
 
         /* 1200 and 600 */
-        
+
         @media all and (min-width: 75em) and (min-height: 37.5em) {
 
             .main {
@@ -421,11 +419,11 @@
 
                 <form class="form form--search " action="index.html" method="post">
                     <label class="label label--status">
-                        <input class="input input--radio" type="radio" id="status-sold" name="status" value="sale" checked="checked"> For Sale
+                        <input type="radio" id="status-sold" name="status" value="sale" checked="checked"> For Sale
                     </label>
 
                     <label class="label label--status">
-                        <input class="input input--radio" type="radio" id="status-rent" name="status" value="rent"> To Rent
+                        <input type="radio" id="status-rent" name="status" value="rent"> To Rent
                     </label>
 
                     <label class="label label--search" for="search">
