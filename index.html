@@ -98,7 +98,7 @@
 
         .main {
             background-color: #f7f7f7;
-            padding: 2em 1em;
+            padding: 2em 1em 1em 1em;
         }
 
         /* Hero */
@@ -154,12 +154,13 @@
 
         .tabs li {
             display: block;
+            margin-bottom: 0.5em;
         }
 
         .tabs li a {
             color: #0074d9;
             display: inline-block;
-            padding: 0.75em;
+            padding: 0.5em;
             text-decoration: none;
             transition: background-color 0.25s, color 0.25s;
         }
@@ -178,6 +179,22 @@
 
         /* Form */
 
+        .form--search .fieldset {
+            background-color: #ddd;
+            border: 0;
+            clear: both;
+            margin: 0;
+            padding: 0.75em;
+        }
+
+        .form--search .fieldset .label {
+            margin-bottom: 0.5em;
+        }
+
+        .form--search .fieldset .label:last-child {
+            margin-bottom: 0;
+        }
+
         .form--search .label {
             display: block;
         }
@@ -195,13 +212,27 @@
             height: 4em; /* 64 / 16 */
             line-height: normal;
             padding: 1.3125em;
-            transition: border-color 0.25s;
+            transition: background-color 0.25s, border-color 0.25s, color 0.25s;
         }
 
         .form--search .input:focus,
         .form--search .input:hover {
             border-color: #0074d9;
             outline: none;
+        }
+
+        .form--search .input--alt {
+            background-color: #fff;
+            color: #111;
+            height: 2em; /* 32 / 16 */
+            padding: 0.25em;
+        }
+
+        .form--search .input--alt:focus,
+        .form--search .input--alt:hover {
+            background-color: #0074d9;
+            border-color: transparent;
+            color: #fff;
         }
 
         .form--search .input--select {
@@ -262,16 +293,21 @@
             }
 
             .tabs {
-                margin-bottom: 2em;
+                margin-bottom: 1.75em;
             }
 
             .tabs li {
                 display: inline-block;
-                margin-left: 0.5em;
+                margin-bottom: 0;
+                margin-left: 1em;
             }
 
             .tabs li:first-child {
                 margin-left: 0;
+            }
+
+            .tabs li a {
+                padding: 1em;
             }
 
             .tabs li.is-current a:after {
@@ -289,8 +325,35 @@
                 width: 0;
             }
 
+            .form--search {
+                position: relative;
+            }
+
+            .form--search .fieldset .label {
+                margin-bottom: 0;
+                margin-left: 0.75em;
+            }
+
+            .form--search .fieldset .label:first-child {
+                margin-left: 0;
+            }
+
             .form--search .label {
                 float: left;
+            }
+
+            .form--search .label--status {
+                margin-bottom: 0.75em;
+                width: 25%;
+            }
+
+            .form--search .label--search {
+                margin-bottom: 0.75em;
+                width: 75%;
+            }
+
+            .form--search .label--status {
+                width: 25%;
             }
 
             .form--search .label--search .input {
@@ -298,6 +361,9 @@
             }
 
             .form--search .btn {
+                position: absolute;
+                right: 0;
+                top: 0;
                 width: auto;
             }
         }
@@ -344,7 +410,7 @@
                 </ul>
 
                 <form class="form form--search " action="index.html" method="post">
-                    <label class="label" for="status">
+                    <label class="label label--status" for="status">
                         <select class="input input--select" id="status" name="status">
                             <option value="1" selected="selected">For Sale</option>
                             <option value="2">To Rent</option>
@@ -354,6 +420,58 @@
                     <label class="label label--search" for="search">
                         <input class="input" type="text" id="search" name="search" placeholder="Enter a location…" maxlength="20">
                     </label>
+
+                    <fieldset class="fieldset">
+                        <label class="label" for="min">
+                            <select class="input input--select input--alt" id="min" name="min">
+                                <option value="">Min Price</option>
+                                <option value="500000">R 500,000</option>
+                                <option value="1000000">R 1,000,000</option>
+                                <option value="1500000">R 1,500,000</option>
+                                <option value="2000000">R 2,000,000</option>
+                            </select>
+                        </label>
+
+                        <label class="label" for="max">
+                            <select class="input input--select input--alt" id="max" name="max">
+                                <option value="">Max Price</option>
+                                <option value="500000">R 500,000</option>
+                                <option value="1000000">R 1,000,000</option>
+                                <option value="1500000">R 1,500,000</option>
+                                <option value="2000000">R 2,000,000</option>
+                            </select>
+                        </label>
+
+                        <label class="label" for="beds">
+                            <select class="input input--select input--alt" id="beds" name="beds">
+                                <option value="">Beds</option>
+                                <option value="1">1+</option>
+                                <option value="2">2+</option>
+                                <option value="3">3+</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </label>
+
+                        <label class="label" for="baths">
+                            <select class="input input--select input--alt" id="baths" name="baths">
+                                <option value="">Baths</option>
+                                <option value="1">1+</option>
+                                <option value="2">2+</option>
+                                <option value="3">3+</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </label>
+
+                        <label class="label" for="type">
+                            <select class="input input--select input--alt" id="type" name="type">
+                                <option value="">Type</option>
+                                <option value="1">Apartment/Flat</option>
+                                <option value="2">House</option>
+                                <option value="3">Townhouse</option>
+                                <option value="4">Vacant Land</option>
+                            </select>
+                        </label>
+                    </fieldset>
 
                     <button class="btn" type="submit">Search</button>
                 </form>
