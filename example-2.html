@@ -51,19 +51,35 @@
 
         .header {
             background-color: #0074d9;
+            overflow: hidden;
             padding: 1em;
         }
 
         .header .logo {
             display: inline-block;
-            margin-bottom: 1em;
+            float: left;
         }
 
         .header .logo img {
             display: block;
         }
 
+        .header .btn {
+            float: right;
+            margin-top: 0.625em;
+            width: auto;
+        }
+
         /* Nav */
+
+        .nav {
+            clear: both;
+            padding-top: 1em;
+        }
+
+        .nav.is-hidden {
+            display: none;
+        }
 
         .nav .list {
             list-style: none;
@@ -131,7 +147,7 @@
             text-align: center;
             text-decoration: none;
             text-transform: none;
-            transition: background-color 0.25s, color 0.25s;
+            transition: background-color 0.25s;
             vertical-align: middle;
             white-space: nowrap;
             width: 100%;
@@ -142,6 +158,17 @@
         .btn:hover {
             background-color: #001f3f;
             outline: 0;
+        }
+
+        .btn--white {
+            background-color: #fff;
+            color: #001f3f;
+            padding: 1em 1.5em;
+        }
+
+        .btn--white:focus,
+        .btn--white:hover {
+            background-color: #ddd;
         }
 
         /* Tabs */
@@ -234,14 +261,19 @@
                 overflow: hidden;
             }
 
-            .header .logo {
-                float: left;
-                margin-bottom: 0;
+            .header .btn {
+                display: none;
             }
 
             .nav {
+                clear: none;
+                display: block;
                 float: left;
-                margin-top: 1.5625em;
+                padding-top: 1.5625em;
+            }
+
+            .nav.is-hidden {
+                display: block;
             }
 
             .nav .list li {
@@ -259,8 +291,8 @@
             }
 
             .nav {
-                margin-top: 1.5em;
                 margin-left: 1.5em;
+                padding-top: 1.5em;
             }
 
             .nav .list li {
@@ -394,7 +426,9 @@
             <img src="http://placehold.it/120x68" width="120" height="68" alt="">
         </a>
 
-        <nav class="nav">
+        <button class="btn btn--white js-toggle">Menu</button>
+
+        <nav class="nav js-nav">
             <ol class="list">
                 <li class="is-current"><a href="index.html">Lorem</a></li>
                 <li><a href="index.html">Ipsum</a></li>
@@ -489,5 +523,20 @@
             </div>
         </div>
     </main>
+
+    <script>
+        /*
+         * Navigation
+         */
+
+        var nav = document.querySelector('.js-nav');
+        var toggle = document.querySelector('.js-toggle');
+
+        nav.className = nav.className += ' is-hidden'; // Hidden by default
+
+        toggle.onclick = function () {
+            nav.classList.toggle('is-hidden'); // Toggle the display
+        };
+    </script>
 </body>
 </html>
