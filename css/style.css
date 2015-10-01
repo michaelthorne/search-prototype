@@ -429,7 +429,6 @@ html {
         padding-top: 1.5em;
         padding-bottom: 1.5em;
         padding-left: 1em;
-        width: 16%;
     }
 
     .form--search .label--toggle + .label--toggle {
@@ -438,7 +437,7 @@ html {
     }
 
     .form--search .label--toggle + .label--search {
-        width: 68%;
+        width: 70%;
     }
 
     .form--search .label--search .input {
