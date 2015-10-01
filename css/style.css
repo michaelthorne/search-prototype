@@ -209,14 +209,14 @@ html {
     display: block;
 }
 
-.form--search .label--radio {
+.form--search .label--toggle {
     float: left;
-    margin-bottom: 2em;
-    margin-left: 1em;
+    margin-bottom: 1em;
+    margin-left: 0.25em;
 }
 
-.form--search .label--radio:first-child {
-    margin-left: 0;
+.form--search .label--toggle + .label--toggle {
+    margin-left: 1em;
 }
 
 .form--search .label .input {
@@ -241,15 +241,15 @@ html {
     outline: none;
 }
 
-.form--search .label--radio input {
+.form--search .label--toggle input {
     margin-right: 0.25em;
 }
 
 .form--search .input--alt {
     background-color: #fff;
     color: #111;
-    height: 2em; /* 32 / 16 */
-    padding: 0.25em;
+    height: 2.5em; /* 40 / 16 */
+    padding: 0.5em;
 }
 
 .form--search .input--alt:focus,
@@ -382,7 +382,7 @@ html {
     }
 
     .form--search .fieldset {
-        background-color: #ddd;
+        background-color: #111;
         border: 0;
         clear: both;
         display: block;
@@ -404,23 +404,41 @@ html {
     }
 
     .form--search .label--status {
-        margin-bottom: 0.75em;
         width: 25%;
     }
 
+    .form--search .label--status select {
+        background-color: #aaa;
+        color: #fff;
+    }
+
+    .form--search .label--status select:focus,
+    .form--search .label--status select:hover {
+        border-color: #0074d9;
+    }
+
     .form--search .label--search {
-        margin-bottom: 0.75em;
         width: 75%;
     }
 
-    .form--search .label--radio {
-        margin-top: 1.5em;
+    .form--search .label--toggle {
+        background-color: #aaa;
+        color: #fff;
+        margin-bottom: 0;
         margin-left: 0;
-        width: 14%;
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+        padding-left: 1em;
+        width: 16%;
     }
 
-    .form--search .label--radio + .label--search {
-        width: 72%;
+    .form--search .label--toggle + .label--toggle {
+        margin-left: 0;
+        padding-right: 1em;
+    }
+
+    .form--search .label--toggle + .label--search {
+        width: 68%;
     }
 
     .form--search .label--search .input {
