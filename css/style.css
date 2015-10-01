@@ -209,9 +209,14 @@ html {
     display: block;
 }
 
+.form--search .label--status select {
+    background-color: #aaa;
+    color: #fff;
+}
+
 .form--search .label--toggle {
     float: left;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
     margin-left: 0.25em;
 }
 
@@ -405,11 +410,6 @@ html {
 
     .form--search .label--status {
         width: 25%;
-    }
-
-    .form--search .label--status select {
-        background-color: #aaa;
-        color: #fff;
     }
 
     .form--search .label--status select:focus,
